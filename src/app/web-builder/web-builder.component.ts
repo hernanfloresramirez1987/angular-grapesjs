@@ -49,7 +49,7 @@ export class WebBuilderComponent implements OnInit {
       },
       canvas: {
           styles: [
-              '../../assets/css/bootstrap5-grapesjs/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css'
+              'https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp'
           ],
           scripts: [
               //x'https://code.jquery.com/jquery-3.5.1.slim.min.js',
@@ -75,7 +75,7 @@ export class WebBuilderComponent implements OnInit {
           // style: { background: 'red'},
           // attributes: { title: 'here' },
           content:`
-            <h1 class="text-center text-dark">titulo h1</h1>
+            <h1 class="text-center text-blue-800">titulo h1</h1>
             <h2 class="text-center text-dark">titulo h2</h2>
             <h3 class="text-center text-dark">titulo h3</h3>
           `
@@ -284,7 +284,7 @@ export class WebBuilderComponent implements OnInit {
   }
   generatePdf(codeHtml: string) {
     const opt = {
-      margin: [10, 10, 10, 10],
+      margin: [10.5, 10.5, 10.5, 10.5],
       filename: 'generated.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
@@ -310,87 +310,56 @@ export class WebBuilderComponent implements OnInit {
 
 
 
-  plantilla1: string = `<style>
-  html {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      color: black;
-      word-break: break-all;
-  }
-  table {
-      border-collapse: collapse;
-      border: 1px solid #C5C5C5;
-  }
-  td {
-      border: 1px solid #C5C5C5;
-      word-break: break-all;
-      text-align: left;
-      padding: 10px;
-  }
-  th {
-      background-color: #3B3B3B;
-      color: white;
-      text-align: left;
-      padding: 10px;
-  }
-  tr:nth-child(even) {
-      background-color: #C5C5C5;
-  }
-  .header-box {
-      padding: 10px;;
-      background: #3B3B3B;
-      color: white;
-  }
-</style>
-  <h1 class="header-box">Transfer Summary</h1>
-  <h3>ID Transfer: 2245</h3>
-  <p>
+  plantilla1: string = `
+  <h2 class="header-box bg-green-900">Transfer Summary</h2>
+  <h4 class="text-dark">ID Transfer: 2245</h4>
+  <p class="text-dark">
       <b>Creation Date: </b> 18.05.2023 <br>
       <b>Created by: </b> User 5656 <br>
       <b>Initial Comments: </b>
   </p>
   <hr>
-  <p>
+  <p class="text-dark">
       <b>Transfer Date: </b> 20.05.2023 <br>
       <b>Transferd by: </b> User 5656 <br>
       <b>Final Comments: </b>
   </p>
 
-  <table style="width:100%">
-  <tr>
+  <table style="width:100%" class="table table-auto">
+    <tr>
       <th>Sku</th>
       <th>Name</th>
       <th>Location</th>
       <th>Required</th>
       <th>Put Away</th>
       <th>Bintag</th>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
       <td>A00001</td>
       <td>CEREAL KELLOGS CORN FLAKES 500GR</td>
       <td>03:AP-01-A</td>
       <td>1005</td>
       <td>0</td>
       <td>100004954</td>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
       <td>A00002</td>
       <td>TOALLA HUM HUGGIES AS DOYP VERDE 48 UN</td>
       <td>03:AP-01-B</td>
       <td>350</td>
       <td>300</td>
       <td>100004955</td>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
       <td>B00001</td>
       <td>CARBON ECOLOGICO 3KG</td>
       <td>03:AP-01-C</td>
       <td>200</td>
       <td>75</td>
       <td>100004957</td>
-  </tr>
+    </tr>
   </table>
 
-  <p>Report generated: 06.06.2023</p>
+  <p class="text-dark">Report generated: 06.06.2023</p>
   `;
 }
